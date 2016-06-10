@@ -23,9 +23,6 @@ class Comunali2016Spider(CrawlSpider):
         'MODE': 'sindaco',
     }
 
-    #start_urls = ['http://elezioni.interno.it/comunali/scrutini/20160605/G030491450.htm','http://elezioni.interno.it/comunali/scrutini/20160605/G030490380.htm', 'http://elezioni.interno.it/comunali/scrutini/20160605/G030491810.htm']
-
-    #def parse_old(self, response):
     def parse(self, response):
 
         global sindaco
@@ -53,9 +50,7 @@ class Comunali2016Spider(CrawlSpider):
             yield Request(url, callback=self.parse_comune)
 
 
-    #def parse(self, response):
     def parse_comune(self, response):
- #       counter = 0
         global idComune
         global sindaco
 
@@ -122,15 +117,15 @@ class Comunali2016Spider(CrawlSpider):
                  yield l
               else:
                  pass
-        if not sindaco:
-           for line in response.xpath('//table[@class="tblRiepScrutini"][2]//tr'):
-              l = Lista()
-              l['idCandidato'] = line.xpath('./th/text()').extract()[0]
-              l['nome'] = line.xpath('./th/text()').extract()[0]
-              l['voti'] = string.replace(line.xpath('./td[@class="num"]/text()').extract()[0], '.', '')
-              l['regione'] = regione
-              l['provincia'] = provincia
-              l['comune'] = comune
-              l['anno'] = '2016'
-              yield l
+#        if not sindaco:
+#           for line in response.xpath('//table[@class="tblRiepScrutini"][2]//tr'):
+#              l = Lista()
+#              l['idCandidato'] = line.xpath('./th/text()').extract()[0]
+#              l['nome'] = line.xpath('./th/text()').extract()[0]
+#              l['voti'] = string.replace(line.xpath('./td[@class="num"]/text()').extract()[0], '.', '')
+#              l['regione'] = regione
+#              l['provincia'] = provincia
+#              l['comune'] = comune
+#              l['anno'] = '2016'
+#              yield l
 
