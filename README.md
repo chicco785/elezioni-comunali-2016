@@ -15,18 +15,20 @@ i dati per ogni comune relativi ai voti per i candidati sindaco (sarebbe da aggi
 per avere piu' chiaro lo schieramento), con la seconda modalita' (lista) si estraggono i voti per le singole liste.
 
 ## installazione
-installa python 2.7 (per ubuntu)
+### installa python 2.7 (per ubuntu)
 
 $ sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
 
-installa scrapy
+### installa scrapy
 
 $ pip install scrapy
 
 ## uso
 
 $ git clone https://github.com/chicco785/elezioni-comunali-2016.git
+
 $ cd elezioni-comunali-2016
+
 $ scrapy crawl -o lista.csv -s MODE=lista comunali-2016
 
 oppure 
