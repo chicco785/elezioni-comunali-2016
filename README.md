@@ -25,9 +25,17 @@ $ pip install scrapy
 
 ## uso
 
-$ git clone xxx
-$ cd xxx
+$ git clone https://github.com/chicco785/elezioni-comunali-2016.git
+$ cd elezioni-comunali-2016
 $ scrapy crawl -o lista.csv -s MODE=lista comunali-2016
 
 oppure 
+
 $ scrapy crawl -o sindaco.csv -s MODE=sindaco comunali-2016
+
+
+## dati estratti
+
+trovate nella cartella dati i due file csv con i dati estratti per sindaci e liste
+
+enjoy federico
